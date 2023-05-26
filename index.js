@@ -6,9 +6,6 @@ const {
   addContact,
 } = require("./contacts");
 const { Command } = require("commander");
-// console.log(argv);
-// removeContact("Iy2_S1suFwFp01ugzNRRu");
-// addContact("Serhii", "s@m.com", "+48739641836");
 
 const program = new Command();
 program
@@ -22,7 +19,6 @@ program.parse(process.argv);
 
 const argv = program.opts();
 
-// TODO: рефакторить
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
