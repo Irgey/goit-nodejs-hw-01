@@ -1,4 +1,3 @@
-console.log("hello world");
 const {
   listContacts,
   getContactById,
@@ -22,8 +21,8 @@ const argv = program.opts();
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
-      const list = await listContacts();
-      console.log(list);
+      const list = JSON.parse(await listContacts());
+      console.table(list);
       break;
 
     case "get":
